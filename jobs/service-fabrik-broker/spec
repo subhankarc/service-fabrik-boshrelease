@@ -100,6 +100,7 @@ provides:
   - directors
   - multi_az_enabled
   - ha_enabled
+  - etcd.url
 consumes:
 - name: scheduler
   type: scheduler
@@ -149,6 +150,10 @@ properties:
   broker_drain_message:
     description: "Drain message that is updated into broker maintenance state. If undefined, then during drain maintenance state is not updated"
     default: "BROKER_DRAIN_INITIATED"
+  
+  etcd.url:
+    description: "URL of ETCD"
+    default: ["10.11.122.106", "10.11.122.107", "10.11.122.108"]
 
   external.port:
     description: "Port used for external endpoints such as dashboards or the Service Fabrik API"
