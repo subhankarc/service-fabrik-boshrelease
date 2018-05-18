@@ -101,6 +101,10 @@ provides:
   - multi_az_enabled
   - ha_enabled
   - etcd.url
+  - etcd.ssl.ca 
+  - etcd.ssl.crt
+  - etcd.ssl.key
+
 consumes:
 - name: scheduler
   type: scheduler
@@ -154,6 +158,15 @@ properties:
   etcd.url:
     description: "URL of ETCD"
     default: ["10.11.122.106", "10.11.122.107", "10.11.122.108"]
+
+  etcd.ssl.ca:
+    description: "ETCD ca certificate"
+
+  etcd.ssl.crt:
+    description: "ETCD certificate"
+
+  etcd.ssl.key:
+    description: "ETCD key"
 
   external.port:
     description: "Port used for external endpoints such as dashboards or the Service Fabrik API"
