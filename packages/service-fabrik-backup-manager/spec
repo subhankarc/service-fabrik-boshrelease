@@ -3,7 +3,10 @@ name: service-fabrik-backup-manager
 dependencies:
   - node
 files:
-  - service-fabrik-broker/broker/**/*
+  - service-fabrik-broker/agent/**/*
+  - service-fabrik-broker/bosh/**/*
+  - service-fabrik-broker/iaas/**/*
+  - service-fabrik-broker/models/**/*
   - service-fabrik-broker/eventmesh/**/*
   - service-fabrik-broker/managers/**/*
   - service-fabrik-broker/common/**/*
