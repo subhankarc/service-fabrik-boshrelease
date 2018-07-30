@@ -14,6 +14,8 @@ type Interface interface {
 	Directors() DirectorInformer
 	// Dockers returns a DockerInformer.
 	Dockers() DockerInformer
+	// Virtualhosts returns a VirtualhostInformer.
+	Virtualhosts() VirtualhostInformer
 }
 
 type version struct {
@@ -35,4 +37,9 @@ func (v *version) Directors() DirectorInformer {
 // Dockers returns a DockerInformer.
 func (v *version) Dockers() DockerInformer {
 	return &dockerInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
+}
+
+// Virtualhosts returns a VirtualhostInformer.
+func (v *version) Virtualhosts() VirtualhostInformer {
+	return &virtualhostInformer{factory: v.factory, namespace: v.namespace, tweakListOptions: v.tweakListOptions}
 }

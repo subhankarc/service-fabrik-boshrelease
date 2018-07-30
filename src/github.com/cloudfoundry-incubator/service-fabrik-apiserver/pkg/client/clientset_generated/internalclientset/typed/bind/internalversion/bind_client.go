@@ -10,6 +10,7 @@ type BindInterface interface {
 	RESTClient() rest.Interface
 	DirectorBindsGetter
 	DockerBindsGetter
+	VirtualhostbindsGetter
 }
 
 // BindClient is used to interact with features provided by the bind.servicefabrik.io group.
@@ -23,6 +24,10 @@ func (c *BindClient) DirectorBinds(namespace string) DirectorBindInterface {
 
 func (c *BindClient) DockerBinds(namespace string) DockerBindInterface {
 	return newDockerBinds(c, namespace)
+}
+
+func (c *BindClient) Virtualhostbinds(namespace string) VirtualhostbindInterface {
+	return newVirtualhostbinds(c, namespace)
 }
 
 // NewForConfig creates a new BindClient for the given config.

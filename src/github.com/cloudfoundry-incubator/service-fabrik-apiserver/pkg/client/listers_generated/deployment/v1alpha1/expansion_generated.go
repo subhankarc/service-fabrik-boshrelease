@@ -19,3 +19,11 @@ type DockerListerExpansion interface{}
 // DockerNamespaceListerExpansion allows custom methods to be added to
 // DockerNamespaceLister.
 type DockerNamespaceListerExpansion interface{}
+
+// VirtualhostListerExpansion allows custom methods to be added to
+// VirtualhostLister.
+type VirtualhostListerExpansion interface{}
+
+// VirtualhostNamespaceListerExpansion allows custom methods to be added to
+// VirtualhostNamespaceLister.
+type VirtualhostNamespaceListerExpansion interface{}
