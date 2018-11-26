@@ -21,3 +21,21 @@ consumes:
   type: deployment_hooks
 - name: service-fabrik-apiserver
   type: service-fabrik-apiserver
+
+properties:
+  access_key:
+    description: "access_key"
+  secret_key:
+    description: "secret_key"
+  region:
+    description: "region"
+  vpc_id:
+    description: "vpc_id"
+  vswitch_id:
+    description: "vswitch_id"
+  account_name:
+    description: "account_name"
+  account_password:
+    description: "account_password"
+  db_name:
+    description: "db_name"
