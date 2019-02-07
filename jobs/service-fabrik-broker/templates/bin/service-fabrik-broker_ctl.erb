@@ -25,6 +25,7 @@ case $1 in
             ln -sf /var/vcap/data/service-fabrik-broker/syslog_modules.conf /etc/rsyslog.d/10-fabrik_modules.conf
         fi
         if ! grep -Fxq "\$ModLoad imtcp" /etc/rsyslog.d/10-fabrik_modules.conf ; then echo "\$ModLoad imtcp" >> /etc/rsyslog.d/10-fabrik_modules.conf ; fi
+        if ! grep -Fxq "\$InputTCPServerRun 1514" /etc/rsyslog.d/10-fabrik_modules.conf ; then echo "\$InputTCPServerRun 1514" >> /etc/rsyslog.d/10-fabrik_modules.conf ; fi
     fi
     /usr/sbin/service rsyslog restart
     

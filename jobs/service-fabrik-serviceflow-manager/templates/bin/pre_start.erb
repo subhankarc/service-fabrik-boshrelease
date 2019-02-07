@@ -13,4 +13,5 @@ if [ ! -L /etc/rsyslog.d/53-fabrik_serviceflow-manager_forwarding.conf ]; then
     ln -sf /var/vcap/data/service-fabrik-serviceflow-manager/syslog_modules.conf /etc/rsyslog.d/10-fabrik_modules.conf
   fi
   if ! grep -Fxq "\$ModLoad imtcp" /etc/rsyslog.d/10-fabrik_modules.conf ; then echo "\$ModLoad imtcp" >> /etc/rsyslog.d/10-fabrik_modules.conf ; fi
+  if ! grep -Fxq "\$InputTCPServerRun 1514" /etc/rsyslog.d/10-fabrik_modules.conf ; then echo "\$InputTCPServerRun 1514" >> /etc/rsyslog.d/10-fabrik_modules.conf ; fi
 fi
